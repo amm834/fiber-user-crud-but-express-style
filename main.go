@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/amm834/fiber-modular-rest-api/configs"
+	"github.com/amm834/fiber-modular-rest-api/routes"
 	"github.com/gofiber/fiber/v2"
 	"log"
 )
@@ -13,9 +14,8 @@ func init() {
 func main() {
 	app := fiber.New()
 
-	app.Get("/", func(c *fiber.Ctx) error {
-		return c.JSON(&fiber.Map{"data": "Hello from Fiber & mongoDB"})
-	})
+	// Routes
+	routes.UserRoutes(app)
 
 	log.Fatal(app.Listen(":8000"))
 }

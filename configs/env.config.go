@@ -6,6 +6,7 @@ import (
 	"os"
 )
 
+// EnvGoURI Get then URI of the mongodb database
 func EnvGoURI() string {
 	err := godotenv.Load()
 	if err != nil {
@@ -15,6 +16,7 @@ func EnvGoURI() string {
 	return os.Getenv("MONGODB_URI")
 }
 
+// EnvGoDB Get then name of the mongodb database
 func EnvGoDB() string {
 	err := godotenv.Load()
 	if err != nil {
