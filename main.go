@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/gofiber/fiber/v2"
+	"log"
 )
 
 func main() {
@@ -11,5 +12,5 @@ func main() {
 		return c.JSON(&fiber.Map{"data": "Hello from Fiber & mongoDB"})
 	})
 
-	app.Listen(":6000")
+	log.Fatal(app.Listen(":8000"))
 }
